@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scan Results</title>
+</head>
+<body>
+    <h1>Web Vulnerability Scanner - Results</h1>
+    {% if result %}
+    <table border="1">
+        <thead>
+            <tr>
+                <th>URL</th>
+                <th>Scan Date</th>
+                <th>Parsed Result</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ result.url }}</td>
+                <td>{{ result.scan_date }}</td>
+                <td>{{ result.parsed_result|safe }}</td>
+            </tr>
+        </tbody>
+    </table>
+    {% else %}
+    <p>No scan result available.</p>
+    {% endif %}
+    <a href="{% url 'initiate_scan' %}">Initiate a new scan</a>
+</body>
+</html>

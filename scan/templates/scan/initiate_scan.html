@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Initiate Scan</title>
+</head>
+<body>
+    <h1>Web Vulnerability Scanner</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="url">Enter URL to scan:</label>
+        <input type="text" id="url" name="url" required>
+        <button type="submit">Scan</button>
+    </form>
+</body>
+</html>
